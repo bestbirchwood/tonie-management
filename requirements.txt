@@ -1,0 +1,2 @@
+tonie-api==0.1.2
+mutagen>=1.47

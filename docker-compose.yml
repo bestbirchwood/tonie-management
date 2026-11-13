@@ -1,0 +1,21 @@
+services:
+  tonie-management:
+    build: .
+    container_name: tonie-management
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8095}:8095"
+    env_file: .env
+    environment:
+      - TZ=${TZ:-Europe/Berlin}
+      - HOERSPIEL_DIR=/hoerspiele
+      - STATE_FILE=/data/stand.json
+      - ORDNER_ANZEIGE=${HOERSPIEL_ORDNER:-./hoerspiele}
+    volumes:
+      - ${HOERSPIEL_ORDNER:-./hoerspiele}:/hoerspiele:ro
+      - ./data:/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
