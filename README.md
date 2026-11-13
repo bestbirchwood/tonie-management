@@ -64,7 +64,7 @@ Unterstützte Formate: MP3, M4A, M4B, AAC, OGG, OPUS, WAV, FLAC (umgewandelt wir
 ## Installation
 
 ```bash
-git clone https://github.com/<DEIN-NAME>/tonie-management.git
+git clone https://github.com/bestbirchwood/tonie-management.git
 cd tonie-management
 ./install.sh
 ```
